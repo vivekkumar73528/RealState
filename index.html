@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>RealState</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "r8EaL1n1jOabdQv2y",
+      });
+    })();
+  </script>
+</head>
+
+<style>
+  .quote-section {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--extra-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quote-section h1 {
+  font-size: 2.5rem;
+  color: #9f1e49;
+  margin-bottom: 1rem;
+}
+
+.quote-section .quote-image {
+  width: 50%; /* Default image width */
+  max-width: 300px; /* Maximum width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 150px; /* Rounded corners */
+  margin: 0 auto; /* Center the image */
+}
+
+.quote-section h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 1rem 0;
+}
+
+.quote-section h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 1rem;
+  background-color: #455d7a;
+  padding: 20px 25px;
+}
+
+/* Media Queries */
+
+/* For screens 480px and below */
+@media (max-width: 480px) {
+  .quote-section h1 {
+    font-size: 1.8rem; 
+  }
+  .quote-section .quote-image {
+    max-width: 70%; /* Reduced image width */
+  }
+  .quote-section h2 {
+    font-size: 1.5rem; 
+  }
+  .quote-section h3 {
+    font-size: 1.2rem; 
+  }
+}
+
+/* For screens between 481px and 600px */
+@media (min-width: 481px) and (max-width: 600px) {
+  .quote-section h1 {
+    font-size: 2rem; 
+  }
+  .quote-section .quote-image {
+    max-width: 60%; /* Reduced image width */
+  }
+  .quote-section h2 {
+    font-size: 1.7rem; 
+  }
+  .quote-section h3 {
+    font-size: 1.4rem; 
+  }
+}
+
+/* For screens between 601px and 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .quote-section h1 {
+    font-size: 2.2rem; 
+  }
+  .quote-section .quote-image {
+    max-width: 50%; /* Further reduced image width */
+  }
+  .quote-section h2 {
+    font-size: 1.8rem; 
+  }
+  .quote-section h3 {
+    font-size: 1.5rem; 
+  }
+}
+
+
+.slider-container {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center; /* Center align the container */
+}
+
+.slider1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two images per row */
+    gap: 15px; /* Space between images */
+    width: calc(100% - 40px); /* Full width minus padding */
+    margin-left: 20px; /* Margin to center the grid */
+    border-radius: 8px;
+    animation: slide 15s infinite; /* Optional animation */
+}
+
+.slider1 img {
+    width: 100%; /* Full width of grid cell */
+    max-width: 450px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slider1 img:hover {
+    transform: scale(1.01); /* Slightly scale up */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.slide-h1 h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Media Query for screens 600px and below */
+@media (max-width: 600px) {
+    .slider1 {
+      grid-template-columns: repeat(2, 1fr); 
+        margin-left: 0; /* Remove left margin */
+        animation: none; /* Disable animation for better performance */
+    }
+
+    .slider1 img {
+        margin-bottom: 15px; /* Add bottom margin for spacing */
+    }
+}
+
+/* Media Query for screens between 601px and 900px */
+@media (max-width: 780px) {
+    .slider1 {
+        grid-template-columns: repeat(2, 1fr); 
+        margin-left: 20px; /* Ensure alignment with container */
+    }
+
+    .slider1 img {
+        width: 100%; /* Ensure images fill their grid cells */
+        margin-bottom: 10px; /* Adjust bottom margin for spacing */
+    }
+
+    .slide-h1 h1 {
+        font-size: 2.2rem; /* Adjust heading size for medium screens */
+    }
+}
+
+
+
+ 
+</style>
+
+<body>
+  <nav>
+    <div class="nav__bar">
+      <div class="nav__logo"><a href="#">HomeStars</a></div>
+      <ul class="nav__links">
+        <li class="link"><a href="#home">Overview</a></li>
+        <li class="link"><a href="#about">Highlights</a></li>
+        <li class="link"><a href="#project">Gallery</a></li>
+        <li class="link"><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="header">
+    <div class="header__container">
+      <div class="header__content">
+        <h1>A home built and unique with love and dreams</h1>
+        <p>
+          Discover a curated selection of homes, apartments, and commercial
+          properties, along with expert tips, market insights, and valuable
+          resources to help you make the best real estate decisions. Join us
+          today and let's unlock the doors to your dream property!
+        </p>
+      </div>
+      <div class="header__image">
+        <img src="assets/header.png" alt="header" />
+      </div>
+    </div>
+  </header>
+
+  <section class="section__container about__container" id="about">
+    <div class="about__image">
+      <img src="assets/about.jpg" alt="about" />
+    </div>
+    <div class="about__content">
+      <h3>HIGHLIGHTS</h3>
+      <h2 class="section__header">
+        Award winning real estate company in Dubai
+      </h2>
+      <p class="section__subheader">
+        Whether you're a first-time homebuyer, a seasoned investor, or simply
+        looking for a change, we're here to guide you every step of the way.
+        Our mission is to make your real estate journey smooth and successful.
+      </p>
+      <div class="about__grid">
+        <div class="about__card">
+          <h4>PREVIOUS PROJECTS</h4>
+          <p>34+</p>
+        </div>
+        <div class="about__card">
+          <h4>YEARS EXPERIENCE</h4>
+          <p>20+</p>
+        </div>
+        <div class="about__card">
+          <h4>ONGOING PROJECTS</h4>
+          <p>12</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="slide-h1">
+    <h1>Gallery</h1>
+  </div>
+
+  <div class="slider-container">
+    <div class="slider1">
+      <img src="assets/project-1.jpg" alt="Image 1">
+      <img src="assets/project-2.jpg" alt="Image 2">
+      <img src="assets/project-3.jpg" alt="Image 3">
+      <img src="assets/project-4.jpg" alt="Image 1">
+      <img src="assets/project-5.jpg" alt="Image 2">
+      <img src="assets/project-6.jpg" alt="Image 3">
+    </div>
+  </div>
+  <div class="slider-container">
+    <div class="slider1">
+      
+    </div>
+  </div>
+
+  <!-- ----------------------------Quate------------------ -->
+  <div class="quote-section">
+    <h1>Request A Quote</h1>
+    <img src="assets/project-1.jpg" alt="Luxury Homes" class="quote-image">
+    <h2>3/4 BHK LUXURY HOMES</h2>
+    <h3>Call Now: 863-765-5708 | New Delhi</h3>
+  </div>
+
+<!-- ----------------------------Location Advantage ------------ -->
+<div class="location-advantage-section">
+  <h1 class="location-advantage-title">Location Advantage</h1>
+
+  <img src="assets/loc.jpeg" alt="Location Advantage" class="location-image">
+  <h3>View Location Map</h3>
+</div>
+
+
+
+  <section class="section__container contact__container" id="contact">
+    <div class="contact__image">
+      <img src="assets/contact.jpg" alt="contact" />
+    </div>
+    <div class="contact__content">
+      <h2 class="section__header">Contact Us</h2>
+      <p class="section__subheader">
+        Discover the difference, where expertise meets excellence in real
+        estate. Let's embark on this exciting journey together.
+      </p>
+      <form id="contactForm" action="#">
+        <div class="form-group">
+         <label for="name">Name</label>
+         <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" onclick="sendMail()">SEND MESSAGE</button>
+      </form>
+      
+      
+      <!-- <div id="responseMessage" class="response-message"></div> -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__bar">
+      Disclaimer : This website is meant only for information purposes. It should not be considerd / claimed as an
+      official site. Privacy Policy
+    </div>
+  </footer>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    function changeImage() {
+      const selector = document.getElementById('image-selector');
+      const image = document.getElementById('slider-image');
+      image.src = selector.value;
+    }
+
+  </script>
+</body>
+
+</html>
